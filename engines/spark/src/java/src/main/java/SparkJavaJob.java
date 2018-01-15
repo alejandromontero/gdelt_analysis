@@ -56,7 +56,7 @@ public class SparkJavaJob {
               public Tuple2<String,Double> call(GDELTEvent gdeltEvent) throws Exception {
                   return new Tuple2<>(gdeltEvent.actor1Code_countryCode, gdeltEvent.avgTone);
               }
-          }).collect()
+          })
           .dstream().saveAsTextFiles(outputPath,"");
           //.print();
 
